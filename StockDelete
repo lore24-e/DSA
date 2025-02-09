@@ -1,0 +1,54 @@
+
+package stockdelete;
+
+import java.util.Scanner;
+public class StockDelete {
+
+  
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Menu:");
+            System.out.println("1. Add Stock");
+            System.out.println("2. Delete Stock");
+            System.out.print("Please enter your choice: ");
+            
+            int choice = scanner.nextInt();
+            
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter stock name to add: ");
+                    String stockNameToAdd = scanner.next();
+                    System.out.print("Enter quantity: ");
+                    int quantityToAdd = scanner.nextInt();
+                    System.out.println("Stock added: " + stockNameToAdd + " with quantity: " + quantityToAdd);
+                    break;
+                    
+                case 2:
+                    System.out.print("Enter stock name to delete: ");
+                    String stockNameToDelete = scanner.next();
+                    System.out.println("Stock " + stockNameToDelete + " deleted.");
+                    break;
+
+                case 3:
+                    System.out.println("Exiting the program...");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+
+            System.out.print("\nDo you want to make another choice? (yes/no): ");
+            String continueChoice = scanner.next();
+            if (continueChoice.equalsIgnoreCase("No")) {
+                System.out.println("Goodbye!");
+                break;
+            }
+        }
+    }
+}
+
+    
+    
